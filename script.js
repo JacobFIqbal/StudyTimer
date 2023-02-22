@@ -46,7 +46,7 @@ function stopTimer() {
 
 function resetTimer() {
 	clearInterval(x);
-	document.getElementById("timer").innerHTML = "Starting";
+	document.getElementById("timer").innerHTML = "0m 0s";
 }
 
 
