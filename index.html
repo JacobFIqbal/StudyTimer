@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Countdown Timer</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Countdown Timer</h1>
+	<label for="duration">Select Countdown Time:</label>
+	<select id="duration" onchange="setTimer()">
+		<option value="15">15 minutes</option>
+		<option value="30">30 minutes</option>
+		<option value="45">45 minutes</option>
+		<option value="60">60 minutes</option>
+	</select>
+	<p id="timer"></p>
+	<button id="start-btn">Start</button>
+	<button id="reset-btn">Reset</button>
+	<script src="script.js"></script>
+</body>
+</html>
