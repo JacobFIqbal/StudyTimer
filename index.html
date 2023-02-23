@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Countdown Timer</title>
+	<title>StuddyBuddy</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<h1>Countdown Timer</h1>
-	<label for="duration">Select Countdown Time:</label>
+	<center><h1>StuddyBuddy</h1></center>
+	<center><label for="duration">Select Countdown Time:</label>
 	<select id="duration" onchange="setTimer()">
 		<option value="15">15 minutes</option>
 		<option value="30">30 minutes</option>
 		<option value="45">45 minutes</option>
 		<option value="60">60 minutes</option>
-	</select>
-	<p id="timer"></p>
-	<button id="start-btn">Start</button>
-	<button id="stop-btn">Stop</button>
+	</select></center>
+	<p id="timer" style="position: absolute; top: 250px; font-size: 23px;"></p>
+	<center><button id="start-btn">Start</button></center>
+	<center><button id="stop-btn">Stop</button></center>
+	<!--Adding the script to the page-->
 	<script src="script.js"></script>
 
+	<!--The svg background-->
 	<div id="background">
 	<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
 		xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">

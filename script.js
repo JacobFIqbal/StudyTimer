@@ -42,6 +42,7 @@ function startTimer() {
 function stopTimer() {
 	clearInterval(x);
 	timeRemaining = countDownDate - new Date().getTime();
+	
 }
 
 function resetTimer() {
