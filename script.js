@@ -17,6 +17,8 @@ function setTimer() {
 }
 
 function startTimer() {
+	//Clears the timer title if the timer was paused
+	document.getElementById("timer-title").innerHTML = "";
 	if (!countDownDate) {
 		countDownDate = new Date();
 		countDownDate.setMinutes(countDownDate.getMinutes() + parseInt(duration));
@@ -42,15 +44,21 @@ function startTimer() {
 function stopTimer() {
 	clearInterval(x);
 	timeRemaining = countDownDate - new Date().getTime();
+	document.getElementById("timer-title").innerHTML = "Timer paused";
 	
 }
 
 function resetTimer() {
 	clearInterval(x);
-	document.getElementById("timer").innerHTML = "0m 0s";
+	document.getElementById("timer").innerHTML = "";
 }
 
 
 
 document.getElementById("start-btn").addEventListener("click", startTimer);
 document.getElementById("stop-btn").addEventListener("click", stopTimer);
+document.getElementById("reset-btn").addEventListener("click", resetTimer);
+document.getElementById("duration").addEventListener("change", function() {
+  countDownDate = null;
+  resetTimer();
+});
