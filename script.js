@@ -44,13 +44,20 @@ function startTimer() {
 function stopTimer() {
 	clearInterval(x);
 	timeRemaining = countDownDate - new Date().getTime();
-	document.getElementById("timer-title").innerHTML = "Timer paused";
+	if(document.getElementById("timer").innerHTML === ""){
+		document.getElementById("timer-title").innerHTML = "";
+	}
+	else{
+		document.getElementById("timer-title").innerHTML = "Timer paused";
+	}
+	
 	
 }
 
 function resetTimer() {
 	clearInterval(x);
 	document.getElementById("timer").innerHTML = "";
+	document.getElementById("timer-title").innerHTML = "";
 }
 
 
