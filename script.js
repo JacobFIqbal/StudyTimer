@@ -36,7 +36,8 @@ function startTimer() {
 	  document.getElementById("timer").innerHTML = minutes + " minutes " + seconds + " seconds ";
 	  if (timeRemaining < 0) {
 	    clearInterval(x);
-	    document.getElementById("timer").innerHTML = "EXPIRED";
+	    document.getElementById("timer").innerHTML = "Please take a break";
+		alert("The timer has expired")
 	  }
 	}, 1000);
 }
@@ -58,6 +59,26 @@ function resetTimer() {
 	clearInterval(x);
 	document.getElementById("timer").innerHTML = "";
 	document.getElementById("timer-title").innerHTML = "";
+
+}
+function addTask() {
+	var task = document.getElementById("task-input").value;
+	if (task.trim() === "") {
+		return;
+	}
+	var taskList = document.getElementById("task-list");
+	var taskItem = document.createElement("li");
+	var taskText = document.createTextNode(task);
+	var taskDelete = document.createElement("button");
+	taskDelete.innerHTML = "Finished";
+	taskDelete.addEventListener("click", function() {
+		console.log(taskItem);
+		taskList.removeChild(taskItem);
+	});
+	taskItem.appendChild(taskText);
+	taskItem.appendChild(taskDelete);
+	taskList.appendChild(taskItem);
+	document.getElementById("task-input").value = "";
 }
 
 
@@ -69,3 +90,4 @@ document.getElementById("duration").addEventListener("change", function() {
   countDownDate = null;
   resetTimer();
 });
+document.getElementById("add-task-btn").addEventListener("click", addTask);
